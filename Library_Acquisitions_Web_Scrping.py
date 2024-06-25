@@ -15,26 +15,21 @@ time_obj_now = datetime.datetime.now()
 print ("Start date and time : ")
 print (time_obj_now.strftime("%Y-%m-%d %H:%M:%S"))
 
-# file = open("ISBN10_list.csv", "r")
-# unique_data = list(csv.reader(file, delimiter=","))
-# file.close()
-# file = 
-
-wb = openpyxl.load_workbook("Book Details 14-09-2023.xlsx")
+wb = openpyxl.load_workbook("Book Details.xlsx")
 sheet = wb.active
 
 unique_isbn=[]
 lib_data_dict = {"ISBN":["ISBN 13","ISBN 10","Title","Author","Publisher"]}
 
 keyboard = Controller()
-driver = webdriver.Chrome("D:\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+driver = webdriver.Chrome("D:\chromedriver-win64\chromedriver-win64\chromedriver.exe")  #Update your Chrome Driver path here
 driver.get("https://www.goodreads.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.goodreads.com%2Fap-handler%2Fregister&prevRID=JHAW05ZHTS3FPZ1T0EMG&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_goodreads_web_na&openid.mode=checkid_setup&siteState=ebe6b7f4ea22ec4e80e133fe98da8bc2&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=amzn_goodreads_web_na&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0")
 
 mail_txtbox = driver.find_element(By.XPATH, '//*[@id="ap_email"]')
-mail_txtbox.send_keys("brijrajkacha553@gmail.com")
+mail_txtbox.send_keys("") #Enter your Gooreads.com account e-mail between ""
 
 password_txtbox = driver.find_element(By.XPATH, '//*[@id="ap_password"]')
-password_txtbox.send_keys("AXQ_1234")
+password_txtbox.send_keys("") #Enter your Gooreads.com account password between ""
 
 signup_button = driver.find_element(By.XPATH,'//*[@id="signInSubmit"]').click()
 
@@ -80,7 +75,7 @@ for i in range(2,sheet.max_row+1):
                     data_lst = ["NOT FOUND","NOT FOUND","NOT FOUND","NOT FOUND","NOT FOUND"]
                     df2 = pd.DataFrame(data_lst)
                     df2 = df2.transpose()
-                    with pd.ExcelWriter("Book Details 14-09-2023.xlsx", engine="openpyxl",mode = "a", if_sheet_exists="overlay") as writer:
+                    with pd.ExcelWriter("Book Details.xlsx", engine="openpyxl",mode = "a", if_sheet_exists="overlay") as writer:
                         df2.to_excel(writer, startrow = i-1,startcol = 2 ,index = False, header = False)
                     unique_isbn.append(isbn)
                     lib_data_dict[isbn] = data_lst
@@ -121,7 +116,7 @@ for i in range(2,sheet.max_row+1):
             df2 = pd.DataFrame(data_lst)
             df2 = df2.transpose()
     
-            with pd.ExcelWriter("Book Details 14-09-2023.xlsx", engine="openpyxl",mode = "a", if_sheet_exists="overlay") as writer:
+            with pd.ExcelWriter("Book Details.xlsx", engine="openpyxl",mode = "a", if_sheet_exists="overlay") as writer:
                 df2.to_excel(writer, startrow = i-1,startcol = 2 ,index = False, header = False)
             
             unique_isbn.append(isbn)
