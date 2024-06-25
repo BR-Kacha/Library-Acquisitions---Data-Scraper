@@ -1,5 +1,9 @@
 # Library-Acquisitions---Data-Scraper || Automated Library Acquisitions Data Scraping
 
+## Authors:
+**Birva Dave** - Github: Birva1809  
+**Brijraj Kacha** - GitHub: BR-Kacha 
+
 ## Project Overview
 
 This project aims to streamline and improve the accuracy of library acquisitions data management for a university library. The system is built using Python and focuses on automating the extraction of book details from online source using given 10-digit ISBN numbers. It handles over 60,000 entries, ensuring efficiency and precision in data scraping.
