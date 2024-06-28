@@ -20,6 +20,7 @@ This project aims to streamline and improve the accuracy of library acquisitions
 
 1. **Configure the script:**
    - Update the script with the relevant Chrome driver path and login credentials for automated sign-in.
+   - Download your suitable chrome-drive from here: [https://googlechromelabs.github.io/chrome-for-testing/]
 
 2. **Run the script:**
    - Run the code file. While the code is running, the Chrome browser will open automatically, so do not close it. Also, ensure that the Excel file being read and written to during the execution of the program is not open.
