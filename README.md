@@ -1,8 +1,8 @@
 # Library-Acquisitions---Data-Scraper || Automated Library Acquisitions Data Scraping
 
 ## Authors:
-**Birva Dave** - Github: Birva1809  
-**Brijraj Kacha** - GitHub: BR-Kacha 
+ - **Birva Dave** | GitHub: [Birva1809](https://github.com/Birva1809)
+ - **Brijraj Kacha** | GitHub: [BR-Kacha](https://github.com/BR-Kacha)
 
 ## Project Overview
 
